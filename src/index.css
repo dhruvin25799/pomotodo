@@ -1,3 +1,29 @@
+
+:root{
+    --COLOR-bg: rgb(95,94,246);
+    --COLOR-secondary-bg: white;
+    /* --COLOR-text: rgb(36, 195, 206); */
+    --COLOR-text: white;
+    --COLOR-secondary-text: black;
+    --COLOR-text-bg: white;
+    --COLOR-input-border: rgb(30,46,58);
+    --COLOR-input-bg: #F1F2F2;
+    --COLOR-white: white;
+    --COLOR-black:black;
+}
+
+[data-theme="dark"]{
+  /* --COLOR-bg: rgb(30,46,58); */
+  --COLOR-bg: rgb(30,46,58);
+  --COLOR-secondary-bg: black;
+  --COLOR-text: rgb(27,204,214);
+  --COLOR-secondary-text: rgb(27,204,214);
+  --COLOR-text-bg: white;
+  --COLOR-button-bg: rgb(27,204,214);
+}
+
 body {
   margin: 0;
+  padding: 0;
+  
 }

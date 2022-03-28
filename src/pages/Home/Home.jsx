@@ -1,0 +1,64 @@
+import React, { useRef, useState } from "react";
+import styles from "./Home.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
+import { Task } from "../../components/Task/Task";
+import { AddTaskModal } from "../../components/AddTaskModal/AddTaskModal";
+import { useUserData } from "../../context/user-data-context";
+import { Button } from "../../components/Button/Button";
+
+export const Home = () => {
+  const [toggle, setToggle] = useState(false);
+  const toggleModal = () => {
+    setToggle(!toggle);
+  };
+  const { userData, userDataDispatch } = useUserData();
+  const inputRef = useRef();
+  const nameDispatch = () => {
+    if(inputRef.current.value !== ""){
+      userDataDispatch({ type: "USER_ADD", payload: inputRef.current.value });
+    }
+  }
+  return (
+    <>
+      <AddTaskModal toggle={toggleModal} show={toggle} />
+      <header className={styles["home-header"]}>
+        {userData.user.isNew ? (
+          <>
+            <div className={styles["home-input"]}>
+              <h1>Please enter your name : </h1>
+              <div className={styles["home-input-control"]}>
+                <input type="text" placeholder="Name : " ref={inputRef}/>
+                <Button onClick={nameDispatch}>Submit</Button>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <h1>Welcome back, {userData.user.name}!</h1>
+            <h3>Today you have {userData.tasks.length} tasks to complete. Good luck!</h3>
+          </>
+        )}
+      </header>
+      <main>
+        <div className={styles["main-card"]}>
+          <div className={styles["main-card-header"]}>
+            <h1>To-Do List</h1>
+            <button
+              className={styles["add-task"]}
+              disabled={userData.user.isNew}
+              onClick={() => toggleModal(true)}
+            >
+              <FontAwesomeIcon icon={faFolderPlus} size="2x" />
+            </button>
+          </div>
+          <div className={styles["task-list"]}>
+            {userData.tasks.map((item) => (
+              <Task key={item._id} task={item} />
+            ))}
+          </div>
+        </div>
+      </main>
+    </>
+  );
+};
