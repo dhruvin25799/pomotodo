@@ -1,0 +1,31 @@
+.task{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.task-header label{
+    display: flex;
+    font-weight: 900;
+    font-size: x-large;
+    align-items: center;
+    gap: 1rem;
+}
+
+.task-header.completed{
+    text-decoration: line-through;
+}
+
+
+.task-cta{
+    display: flex;
+    flex-flow: row;
+    gap: 0.5rem;
+}
+
+.task-cta button {
+    border: none;
+    background: transparent;
+    color: var(--COLOR-secondary-text);
+    cursor: pointer;
+}

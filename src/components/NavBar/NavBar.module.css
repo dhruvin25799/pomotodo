@@ -1,0 +1,28 @@
+.nav{
+    padding: 0.5rem 2rem;
+}
+
+.nav-menu{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-brand a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--COLOR-text);
+    font-weight: 900;
+    font-size: larger;
+}
+
+.nav-theme button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--COLOR-text);
+}

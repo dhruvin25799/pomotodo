@@ -1,0 +1,61 @@
+.home-header{
+    padding: 1rem 2rem;
+}
+
+.home-input{
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+.home-input-control{
+    display: flex;
+    flex-flow: row;
+    gap: 1rem;
+}
+
+.home-input-control input {
+  background-color: var(--COLOR-input-bg);
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: large;
+}
+
+.home-input-control input::-webkit-input-placeholder {
+  font-weight: bold;
+}
+
+.home-input-control input:focus {
+  outline: none;
+}
+
+.main-card{
+    margin: 0 2rem;
+    background-color: var(--COLOR-secondary-bg);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 1rem 2rem;
+    color: var(--COLOR-secondary-text);
+}
+
+.main-card-header{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-task{
+    border: none;
+    background-color: transparent;
+    color: var(--COLOR-secondary-text);
+    cursor: pointer;
+}
+
+.task-list{
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
