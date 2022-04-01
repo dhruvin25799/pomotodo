@@ -23,7 +23,7 @@
     gap: 0.5rem;
 }
 
-.task-cta button {
+.task-cta button,a {
     border: none;
     background: transparent;
     color: var(--COLOR-secondary-text);

@@ -1,0 +1,22 @@
+.task-card{
+    margin: 0 2rem;
+    background-color: var(--COLOR-secondary-bg);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 1rem 2rem;
+    color: var(--COLOR-secondary-text);
+    display: flex;
+    flex-flow: row;
+}
+
+.task-card .task-timer{
+    flex: 1 1 50%;
+}
+.task-card .task-detail{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 50%;
+}

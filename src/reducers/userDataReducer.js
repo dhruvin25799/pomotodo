@@ -7,7 +7,7 @@ export const userDataReducer = (state, action) => {
       };
     }
     case "TASK_ADD": {
-      return { ...state, tasks: [...state.tasks, action.payload] };
+      return { ...state, tasks: [...state.tasks, {...action.payload, timeElapsed: 0}] };
     }
     case "TASK_REMOVE": {
       return {
@@ -17,6 +17,9 @@ export const userDataReducer = (state, action) => {
     }
     case "GET_LOCAL": {
       return { ...state, ...action.payload };
+    }
+    case "TASK_TIME" : {
+      return{...state, tasks: state.tasks.map(item => item._id === action.payload.task._id ? {...item, timeElapsed: action.payload.timeElapsed} : item)}
     }
     default:
       return state;
