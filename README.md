@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+<h1 align="center"><b>PomoTodo</b></h1>
+<div align="center">PomoTodo is a Pomodoro Timer App built with React.</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **Live App**
+To view the website live in action visit\
+[PomoTodo](https://pomotodo-app.netlify.app/).
 
-### `npm start`
+https://user-images.githubusercontent.com/47236093/161784803-d7c0910f-398f-4f94-8507-dd913c886c78.mp4
 
-Runs the app in the development mode.\
+---
+
+## **Functionality** 
+* Theme
+  * The Navbar has a theme toggle icon which toggles the theme, the icon also toggles with the current theme.
+  * The default mode that the app starts in is dark mode.
+  * There are some color issues with light mode that are currently WIP.
+* Landing Page/Home/All Tasks
+  * On first visit on the app, user will be asked for his/her name, without enterting name the app will not allow to add any tasks.
+  * Once the name is entered, a welcome message is displayed with the number of tasks added.
+  * On this page itself, all tasks are shown, user can add more tasks or view/delete an existing task.
+  * Filtering
+    * User can also filter tasks with tags that have been associated with a task when it it created.
+    * The filter is initially set of show All tasks.
+* TaskPage
+  * Displays the Task details such as Name, description and tags.
+  * There is also a countdown timer component here with the Timer set.
+* Timer
+  * The timer on TaskPage is already pre-configured with the estimated time set by user on adding the task.
+  * There are 2 buttons, Start/Pause and Restart.
+  * Start/Pause button chahnges itself with timer state and alos starts/pauses the timer.
+  * Reset button will reset the timer again to the value of estimated time given by user on adding the task.
+  * The timer will constantly show how much time is left on the task and update very second.
+* Data Persistance
+  * Data from the moment you enter your name is stored on LocalStorage of your browser.
+  * All tasks, tags and timer state for each task persists even on refresh.
+  * Timer state will only persist if Timer was paused or restarted.
+  * You can reset the app by deleting the LocalStorage object and hitting refresh.
+
+---
+
+## **How to run this app**
+To run this app locally on your machine, clone the repo to your local machine.\
+In the project directory, you can run\
+`npm start`\
+This will start the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
