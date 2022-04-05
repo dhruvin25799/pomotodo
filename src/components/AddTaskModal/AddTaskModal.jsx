@@ -109,7 +109,7 @@ export const AddTaskModal = (props) => {
               <div className={styles["input-control"]}>
                 <input
                   type="text"
-                  placeholder="Tags/Label"
+                  placeholder="Press Enter to add tag."
                   value={modalInput.tag}
                   onChange={(e) =>
                     modalInputDispatch({ type: "TAG", payload: e.target.value })
