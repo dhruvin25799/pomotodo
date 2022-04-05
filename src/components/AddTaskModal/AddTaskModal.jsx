@@ -7,9 +7,11 @@ import { v4 as uuidv4 } from "uuid";
 import { Button } from "../Button/Button";
 import { useUserData } from "../../context/user-data-context";
 import { useTheme } from "../../context/theme-context";
-import { modalInputReducer, initialModalInput } from "../../reducers/modaInputReducer";
-
-
+import {
+  modalInputReducer,
+  initialModalInput,
+} from "../../reducers/modaInputReducer";
+import { Tag } from "../Tag/Tag";
 
 const isInputValid = (input) => {
   if (input.name !== "" && input.desc !== "" && input.time >= 10) {
@@ -18,18 +20,21 @@ const isInputValid = (input) => {
   return false;
 };
 export const AddTaskModal = (props) => {
-  const {isDark} = useTheme();
-  const {userDataDispatch} = useUserData();
+  const { isDark } = useTheme();
+  const { userDataDispatch } = useUserData();
   const [modalInput, modalInputDispatch] = useReducer(
     modalInputReducer,
     initialModalInput
   );
   const onSubmit = () => {
     if (isInputValid(modalInput)) {
-      userDataDispatch({ type: "TASK_ADD", payload: { ...modalInput, _id: uuidv4() } });
+      userDataDispatch({
+        type: "TASK_ADD",
+        payload: { ...modalInput, _id: uuidv4() },
+      });
     }
-    props.toggle();
     modalInputDispatch({ type: "RESET" });
+    props.toggle();
   };
   return ReactDOM.createPortal(
     <>
@@ -56,8 +61,10 @@ export const AddTaskModal = (props) => {
               />
             </div>
             <div className={styles["input-control"]}>
-              <input
+              <textarea
                 type="text"
+                rows="6"
+                cols="50"
                 value={modalInput.desc}
                 onChange={(e) =>
                   modalInputDispatch({ type: "DESC", payload: e.target.value })
@@ -82,7 +89,39 @@ export const AddTaskModal = (props) => {
                     })
                   }
                 />
-                <input type="number" value={modalInput.time} />
+                <input type="number" value={modalInput.time} readOnly/>
+              </div>
+            </div>
+            <div className={styles["input-tags"]}>
+              <div className={styles["tags-container"]}>
+                {modalInput.tags.map((item) => (
+                  <Tag
+                    key={item}
+                    onClick={() =>
+                      modalInputDispatch({ type: "TAG_REMOVE", payload: item })
+                    }
+                    canRemove={true}
+                  >
+                    {item}
+                  </Tag>
+                ))}
+              </div>
+              <div className={styles["input-control"]}>
+                <input
+                  type="text"
+                  placeholder="Press Enter to add tag."
+                  value={modalInput.tag}
+                  onChange={(e) =>
+                    modalInputDispatch({ type: "TAG", payload: e.target.value })
+                  }
+                  onKeyDown={(e) =>
+                    e.key === "Enter" &&
+                    modalInputDispatch({
+                      type: "TAG_ADD",
+                      payload: e.target.value,
+                    })
+                  }
+                />
               </div>
             </div>
           </div>

@@ -19,4 +19,11 @@
     display: flex;
     flex-flow: column;
     flex: 1 1 50%;
+    align-items: center;
+}
+
+.task-detail .task-tags{
+    display: flex;
+    flex-flow: row;
+    gap: 0.5rem;
 }

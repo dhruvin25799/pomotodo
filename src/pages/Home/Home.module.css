@@ -54,6 +54,13 @@
     cursor: pointer;
 }
 
+.header-filter{
+    display: flex;
+    flex-flow: row;
+    gap: 2rem;
+    align-items: center;
+}
+
 .task-list{
     display: flex;
     flex-flow: column;
