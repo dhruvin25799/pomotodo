@@ -1,0 +1,23 @@
+.tag-label{
+  display: flex;
+  flex-flow: row;
+  background-color: var(--COLOR-text-bg);
+  color: var(--COLOR-secondary-bg);
+  padding: 10px;
+  border-radius: 10px;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag-label p{
+    padding: 0;
+    margin: 0;
+}
+
+.tag-label button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: inherit;
+}

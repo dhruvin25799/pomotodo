@@ -1,0 +1,17 @@
+.filter-dropdown {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-dropdown select {
+  background-color: var(--COLOR-input-bg);
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.filter-dropdown select:focus{
+    outline: none;
+}
